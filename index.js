@@ -66,9 +66,9 @@ https.get(url, res => {
 
 }
 
+getMiner()
 
 
 
-
-setInterval(function(){getMiner()},60*1000);
+//setInterval(function(){getMiner()},60*1000);
 
