@@ -2,7 +2,7 @@ const https = require("https");
 var app = require('express')();
 var port = process.env.PORT || 7777;
 var token = 'B3s44sxg9DAHBtvktVIxtkCGbwFuNsMiT1f8zdRan09';
-var unpaid = 05;
+var unpaid = 0.04325;
 var eththb = 0;
 var value = 0;
 
@@ -57,6 +57,8 @@ https.get(url, res => {
     body = JSON.parse(body);
     unpaid = (body.data.unpaid*0.000000000000000001);
     value = (unpaid*eththb).toFixed(2);
+
+    sendLine("มูลค่า ETH = "+unpaid);
     sendLine("ตอนนี้ได้เงินจากเครื่องขุดบิทคอยน์ "+value+" บาท");
     
   });
@@ -67,24 +69,6 @@ https.get(url, res => {
 
 
 
-app.get('/', function (req, res) {
-	getMiner();
-    res.send('<h1>'+"ตอนนี้ได้เงินจากเครื่องขุดบิทคอยน์ "+value+" บาท"+'</h1>');
-});
 
-app.listen(port, function() {
-    console.log('Starting node.js on port ' + port);
-});
-
-
-
-
-
-
-
-
-
-
-
-
+setInterval(function(){getMiner()},10*60*1000);
 
