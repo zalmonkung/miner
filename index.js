@@ -1,6 +1,4 @@
 const https = require("https");
-var app = require('express')();
-var port = process.env.PORT || 7777;
 var token = 'B3s44sxg9DAHBtvktVIxtkCGbwFuNsMiT1f8zdRan09';
 var unpaid = 0.04325;
 var eththb = 0;
@@ -44,7 +42,7 @@ https.get(url, res => {
 }
 
 async function getMiner(){
-	await getBx();
+  await getBx();
   const url ="https://api.ethermine.org/miner/0x2c05c58775E35b1C576bC5F5Ec593b2e87587817/currentStats";
 https.get(url, res => {
   res.setEncoding("utf8");
@@ -66,9 +64,5 @@ https.get(url, res => {
 
 }
 
-getMiner()
-
-
-
-//setInterval(function(){getMiner()},60*1000);
+getMiner();
 
