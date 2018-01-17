@@ -64,8 +64,6 @@ https.get(url, res => {
 
 }
 
-//getMiner();
-
 
 
 
@@ -78,8 +76,7 @@ app.listen(port, function() {
     console.log('Starting node.js on port ' + port);
 });
 
-//getMiner();
-//setInterval(function(){getMiner()},10000);
+
 
 
 
