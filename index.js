@@ -1,6 +1,6 @@
 var https = require("https");
 var token = 'B3s44sxg9DAHBtvktVIxtkCGbwFuNsMiT1f8zdRan09';
-var unpaid = 0.04325;
+var unpaid = 0;
 var eththb = 0;
 var value = 0;
 
